@@ -1,4 +1,4 @@
-# LEE ME — LocoProductions // PSYCH-BRUTALISM RAVE PORTAL
+# LEAME — LocoProductions // PSYCH-BRUTALISM RAVE PORTAL
 
 Guía completa del sitio web: brand kit, sistema de estilos, tipografías, assets, CSS, JS, backend de pagos, comandos y despliegue.
 
