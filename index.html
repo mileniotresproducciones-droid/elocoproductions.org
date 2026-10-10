@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="es-GT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eLoco Productions // PSYCH-BRUTALISM RAVE &amp; TECH GEAR PORTAL</title>
+  
+  <!-- Meta de Marca y SEO -->
+  <meta name="description" content="Portal oficial de eLoco Productions: Raves subterráneos, festivales psicodélicos al aire libre, y división especializada de alquiler de equipo técnico de audio de alta fidelidad, iluminación y láser en Guatemala.">
+  <meta name="theme-color" content="#080808">
+  <meta name="author" content="eLoco Productions">
+
+  <!-- Open Graph / Redes Sociales -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="eLoco Productions // Psych-Brutalism Rave &amp; Tech Gear Portal">
+  <meta property="og:description" content="Música que reescribe la noche. Eventos de música electrónica y alquiler de audio profesional (L-Acoustics, d&amp;b), iluminación y láseres en Guatemala.">
+  <meta property="og:image" content="img/og-banner.svg">
+  <meta property="og:url" content="https://elocoproductions.org">
+
+  <!-- Favicon con el logotipo oficial -->
+  <link rel="icon" type="image/png" href="img/LOGO.png">
+  <link rel="apple-touch-icon" href="img/LOGO.png">
+
+  <!-- Google Fonts: Space Grotesk, Orbitron, JetBrains Mono, IBM Plex Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;600;700;800&family=Orbitron:wght@600;800;900&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 Grid & Baseline -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+
+  <!-- Estilos Brutalismo Psicodélico -->
+  <link rel="stylesheet" href="loco-theme.css">
+</head>
+<body id="top">
+
+  <!-- Enlace accesible para saltar al contenido principal -->
+  <a href="#mainContent" class="badge-brutal badge-acid position-fixed top-0 start-0 m-2" style="z-index: 2000; transform: translateY(-150%); transition: transform 0.2s;" onfocus="this.style.transform='translateY(0)'" onblur="this.style.transform='translateY(-150%)'">[ SALTAR AL CONTENIDO PRINCIPAL ]</a>
+
+  <!-- ==========================================================================
+       CINEMA FX: CANVAS AURORA, PROGRESS BAR & CURSOR PSICODÉLICO
+       ========================================================================== -->
+  <canvas id="fxCanvas"></canvas>
+  <div id="scrollProgress"></div>
+  <div id="locoCursor"></div>
+  <div id="locoCursorDot"></div>
+
+  <!-- ==========================================================================
+       1. LIVE STATUS TICKER (#liveTicker)
+       ========================================================================== -->
+  <div class="live-ticker" id="liveTicker" aria-live="polite">
+    <div class="ticker-radar">
+      <div class="ticker-radar-dot"></div>
+      <span>LIVE RADAR</span>
+    </div>
+    <div class="ticker-marquee">
+      <div class="ticker-marquee-inner">
+        <span>// PRÓXIMO EVENTO EN:</span> <strong id="liveCountdown" class="text-white">14D:07H:30M:00S</strong>
+        <span>// SISTEMAS DE AUDIO EN LÍNEA:</span> 140 kW REF. CARDIOIDE
+        <span>// PROTOCOLO NRD-2 CONRED:</span> HOMOLOGADO
+        <span>// SAT FEL:</span> EMISIÓN ACTIVA
+        <span>// PRÓXIMO EVENTO EN:</span> <strong class="text-white">14D:07H:30M:00S</strong>
+        <span>// SISTEMAS DE AUDIO EN LÍNEA:</span> 140 kW REF. CARDIOIDE
+      </div>
+    </div>
+    <div class="ticker-stats d-none d-md-flex">
+      <span>GUATEMALA [GTQ]</span>
+      <span class="text-acid">STATUS: ACTIVO</span>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. HEADER & NAVEGACIÓN BRUTALISTA (#siteHeader)
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <div class="d-flex align-items-center">
+        <a href="#top" class="brand-wrapper" aria-label="eLoco Productions Home">
+          <img src="img/LOGO.png" alt="eLoco Logo" class="brand-logo-img">
+          <div class="brand-text-block">
+            <span class="brand-name">eLoco<span>Productions</span></span>
+            <span class="brand-tag">// RAVE &amp; TECH GEAR PORTAL</span>
+          </div>
+        </a>
+
+        <!-- Selector de Modo Dual -->
+        <div class="mode-switch-pill d-none d-lg-flex">
+          <a href="#eventos" class="is-active">[ 01 // EVENTOS ]</a>
+          <a href="#equipos">[ 02 // ALQUILER EQUIPO ]</a>
+        </div>
+      </div>
+
+      <nav class="main-nav d-none d-md-flex" id="mainNav">
+        <a href="#eventos" class="nav-link-brutal">// EVENTOS</a>
+        <a href="#lineup" class="nav-link-brutal">// LINE-UP</a>
+        <a href="#tickets" class="nav-link-brutal">// TICKETS</a>
+        <a href="#equipos" class="nav-link-brutal">// EQUIPOS</a>
+        <a href="#cotizador" class="nav-link-brutal">// COTIZADOR</a>
+        <a href="#protocolo" class="nav-link-brutal">// PROTOCOLO</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="#cotizador" class="btn-brutal btn-acid d-none d-sm-inline-flex">
+          [ COTIZAR RIDER ]
+        </a>
+        <button type="button" class="mobile-nav-toggle d-md-none" id="mobileNavToggle" aria-label="Abrir Menú">
+          ☰ MENÚ
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       CONTENIDO PRINCIPAL
+       ========================================================================== -->
+  <main id="mainContent">
+
+    <!-- ==========================================================================
+         3. HERO SECTION (Vertiente 1: Eventos & Dual Entry)
+         ========================================================================== -->
+    <section class="hero-section">
+      <div class="hero-grid-bg"></div>
+      <div class="hero-glow-radial"></div>
+
+      <div class="hero-content">
+        <div class="hero-meta-bar">
+          <span class="badge-brutal badge-acid">[ EDICIÓN OFICIAL 2026 ]</span>
+          <span class="badge-brutal badge-pink">[ HARD TECHNO &amp; PSYTRANCE ]</span>
+          <span class="badge-brutal badge-cyan">[ AUDIO RENTAL // GUATEMALA ]</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="hero-title-line1">MÚSICA QUE</span>
+          <span class="hero-title-line2">REESCRIBE</span>
+          <span class="hero-title-line3">LA NOCHE</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Productora integral de experiencias electrónicas transgresoras y división de alquiler de riders técnicos audiovisuales de alta precisión. Acústica implacable, escenografía brutalista y cultura rave subterránea en Guatemala.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#tickets" class="btn-brutal btn-acid">
+            [ EXPLORAR LINE-UP &amp; TICKETS ]
+          </a>
+          <a href="#cotizador" class="btn-brutal btn-outline-white">
+            [ SOLICITAR RIDER DE EQUIPO ]
+          </a>
+        </div>
+
+        <!-- Radio Teaser / Web Audio API Synthesizer -->
+        <div class="hero-synth-player" id="radioPlayer">
+          <div class="synth-player-header">
+            <span class="text-acid">// LOCO RADIO // SYNTHESIZED RAVE TEASER</span>
+            <span id="radioStateLabel" class="text-muted">[ EN PAUSA // CLICK PARA INICIAR SÍNTESIS ]</span>
+          </div>
+          <div class="synth-player-body">
+            <button type="button" class="btn-synth-toggle" id="radioToggle" aria-label="Reproducir Preview Sintetizado">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                <polygon points="5 3 19 12 5 21 5 3"/>
+              </svg>
+            </button>
+            <div class="waveform-canvas-box">
+              <canvas id="waveform" width="320" height="54"></canvas>
+            </div>
+            <div class="synth-meta">
+              <div>// MOTOR: <span class="text-acid">WEB AUDIO API</span></div>
+              <div>// TEMPO: <span class="text-white">142 BPM CLOCK</span></div>
+              <div>// SÍNTESIS: <span class="text-cyan">PITCH KICK + ACID BASS</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contadores Dinámicos de Impacto -->
+        <div class="hero-stats-grid" id="counters">
+          <div class="stat-card">
+            <div class="stat-value" data-target="48" data-suffix="+">48<span>+</span></div>
+            <div class="stat-label">// EVENTOS EJECUTADOS</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-target="18500" data-suffix="+">18500<span>+</span></div>
+            <div class="stat-label">// ASISTENTES ACUMULADOS</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-target="120" data-suffix=" kW">120<span> kW</span></div>
+            <div class="stat-label">// POTENCIA ACÚSTICA DESPLEGADA</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-target="6" data-suffix=" REGIONES">6<span> REGIONES</span></div>
+            <div class="stat-label">// COBERTURA EN GUATEMALA</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. CALENDARIO DE EVENTOS (#eventos)
+         ========================================================================== -->
+    <section class="section-brutal" id="eventos">
+      <div class="container-fluid px-lg-5">
+        <div class="section-header">
+          <div class="section-tag">// CALENDARIO RAVE OFICIAL</div>
+          <h2 class="section-title">PRÓXIMAS FECHAS // TEMPORADA 2026</h2>
+          <p class="section-subtitle">
+            Rituales masivos en locaciones secretas con rigurosos controles de aforo, acústica calibrada y producción visual inmersiva.
+          </p>
+        </div>
+
+        <div class="event-grid">
+          <!-- Evento 1 -->
+          <div class="event-card tilt-card">
+            <div class="event-banner">
+              <img src="img/event-neon-circuit.svg" alt="Neon Circuit Vol 07" class="event-banner-img">
+              <div class="event-banner-overlay">
+                <span class="badge-brutal badge-acid">[ ACTIVO // DISPONIBLE ]</span>
+                <span class="badge-brutal badge-cyan">VOL.07</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <div class="event-date-row">// 31 OCTUBRE 2026 • 20:00 - 08:00</div>
+              <h3 class="event-name">NEON CIRCUIT // VOL.07</h3>
+              <ul class="event-info-list">
+                <li>// LOCACIÓN: Almacén Industrial Secreto, Zona 12, Ciudad de Guatemala</li>
+                <li>// GÉNEROS: Hard Techno / Dark Industrial / Cyber-Goth</li>
+                <li>// SISTEMA: L-Acoustics K2 + 12x KS28 Cardioide (140 kW)</li>
+                <li>// CAPACIDAD: 800 Asistentes (Aforo Limitado NRD-2)</li>
+              </ul>
+              <div class="event-footer">
+                <div>
+                  <div class="text-muted" style="font-size: 0.7rem;">FASE ACTUAL</div>
+                  <div class="event-price text-acid">DESDE Q. 450.00 <span class="text-muted" style="font-size: 0.75rem;">(~$58 USD)</span></div>
+                </div>
+                <a href="#tickets" class="btn-brutal btn-acid">[ OBTENER PASE ]</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evento 2 -->
+          <div class="event-card tilt-card">
+            <div class="event-banner">
+              <img src="img/event-cerebro.svg" alt="Cerebro Sintetico Fest" class="event-banner-img">
+              <div class="event-banner-overlay">
+                <span class="badge-brutal badge-pink">[ CAMPAMENTO 48H ]</span>
+                <span class="badge-brutal badge-orange">OUTDOOR</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <div class="event-date-row">// 12 - 14 DICIEMBRE 2026 • 72 HORAS NON-STOP</div>
+              <h3 class="event-name">CEREBRO SINTÉTICO FEST</h3>
+              <ul class="event-info-list">
+                <li>// LOCACIÓN: Bosque Ancestral, Ribera del Lago de Atitlán, Sololá</li>
+                <li>// GÉNEROS: Psytrance / Dark Forest / Ambient Chillout</li>
+                <li>// SISTEMA: d&amp;b audiotechnik V-Series + Decoración String-Art UV 365nm</li>
+                <li>// CAMPING: Áreas delimitadas Leave No Trace + Permisos CONAP</li>
+              </ul>
+              <div class="event-footer">
+                <div>
+                  <div class="text-muted" style="font-size: 0.7rem;">FASE ACTUAL</div>
+                  <div class="event-price text-pink">DESDE Q. 680.00 <span class="text-muted" style="font-size: 0.75rem;">(~$88 USD)</span></div>
+                </div>
+                <a href="#tickets" class="btn-brutal btn-pink">[ ACCESO CAMP ]</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Evento 3 -->
+          <div class="event-card tilt-card is-soldout">
+            <div class="event-banner">
+              <img src="img/event-aftermath.svg" alt="Aftermath Closing Ritual" class="event-banner-img">
+              <div class="event-banner-overlay">
+                <span class="badge-brutal badge-soldout">[ SOLD OUT ]</span>
+                <span class="badge-brutal badge-soldout">VAULT</span>
+              </div>
+            </div>
+            <div class="event-body">
+              <div class="event-date-row text-muted">// 31 ENERO 2027 • 04:00 - 14:00</div>
+              <h3 class="event-name text-muted">AFTERMATH: CLOSING RITUAL</h3>
+              <ul class="event-info-list">
+                <li>// LOCACIÓN: Búnker Subterráneo Privado, Antigua Guatemala</li>
+                <li>// GÉNEROS: Raw Techno / Neo-Rave / Industrial Hypnotic</li>
+                <li>// ESTADO: Capacidad máxima de 300 personas alcanzada</li>
+                <li>// CERO TAQUILLA EN PUERTA: Acceso exclusivamente con folio verificado</li>
+              </ul>
+              <div class="event-footer">
+                <div>
+                  <div class="text-muted" style="font-size: 0.7rem;">ESTATUS</div>
+                  <div class="event-price text-danger">[ 100% AGOTADO ]</div>
+                </div>
+                <button type="button" class="btn-brutal btn-outline-white" disabled style="opacity: 0.5; cursor: not-allowed;">
+                  [ SIN CUPOS ]
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. LINE-UP & CARTELERA DINÁMICA (#lineup)
+         ========================================================================== -->
+    <section class="section-brutal" id="lineup">
+      <div class="container-fluid px-lg-5">
+        <div class="section-header">
+          <div class="section-tag">// CARTELERA INTERACTIVA</div>
+          <h2 class="section-title">LINE-UP OFICIAL // CURATORÍA SÓNICA</h2>
+          <p class="section-subtitle">
+            Productores y selectoras de referencia regional y europea. Haz clic en el botón de preview para sintetizar en tiempo real el rango tonal y el ritmo característico de cada artista.
+          </p>
+        </div>
+
+        <!-- Filtros por subgénero -->
+        <div class="lineup-filters">
+          <button type="button" class="filter-btn is-active" data-filter="all">// TODOS (10 ARTISTAS)</button>
+          <button type="button" class="filter-btn" data-filter="hard-techno">// HARD TECHNO &amp; INDUSTRIAL (135–160 BPM)</button>
+          <button type="button" class="filter-btn" data-filter="psytrance">// PSYTRANCE &amp; FOREST (138–190 BPM)</button>
+          <button type="button" class="filter-btn" data-filter="cyber-goth">// CYBER-GOTH &amp; EBM (120–140 BPM)</button>
+          <button type="button" class="filter-btn" data-filter="post-trance">// POST-TRANCE &amp; NEO-RAVE (130–145 BPM)</button>
+        </div>
+
+        <!-- Grid de artistas inyectado dinámicamente por loco-engine.js -->
+        <div class="lineup-grid" id="lineupGrid"></div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. CALENDARIO Y VENTA DE PASES (#tickets)
+         ========================================================================== -->
+    <section class="section-brutal" id="tickets">
+      <div class="container-fluid px-lg-5">
+        <div class="section-header">
+          <div class="section-tag">// FASES DE BOLETERÍA</div>
+          <h2 class="section-title">ACCESO OFICIAL // TICKETS &amp; PASES RAVE</h2>
+          <p class="section-subtitle">
+            Transacciones transparentes en Quetzales (GTQ) con tipo de cambio de referencia para visitantes internacionales. Emisión de folio con validación antifraude.
+          </p>
+        </div>
+
+        <div class="tickets-layout">
+          <!-- Tiers Cards -->
+          <div class="tier-cards-grid">
+            <!-- Early Bird (Agotado) -->
+            <div class="tier-card is-soldout" data-tier="early">
+              <div class="tier-header">
+                <span class="badge-brutal badge-soldout">[ AGOTADO ]</span>
+                <span class="font-mono text-muted" style="font-size: 0.75rem;">FASE 01</span>
+              </div>
+              <h3 class="tier-title text-muted">EARLY BIRD PASS</h3>
+              <div class="tier-price-gtq text-muted">Q. 290.00</div>
+              <div class="tier-price-usd">~$37.40 USD REF.</div>
+              <ul class="tier-features">
+                <li>Acceso general a Main Warehouse</li>
+                <li>Pulsera conmemorativa coleccionable</li>
+                <li>Cupo limitado a 150 unidades</li>
+              </ul>
+              <button type="button" class="btn-brutal btn-outline-white w-100" disabled style="opacity: 0.5; cursor: not-allowed;">
+                [ FASE CERRADA ]
+              </button>
+            </div>
+
+            <!-- Tier 1 General (Recomendado) -->
+            <div class="tier-card is-selected" data-tier="tier1">
+              <div class="tier-header">
+                <span class="badge-brutal badge-acid">[ DISPONIBLE ]</span>
+                <span class="font-mono text-acid" style="font-size: 0.75rem;">FASE 02</span>
+              </div>
+              <h3 class="tier-title text-white">TIER 1 GENERAL</h3>
+              <div class="tier-price-gtq">Q. 450.00</div>
+              <div class="tier-price-usd">~$58.06 USD REF.</div>
+              <ul class="tier-features">
+                <li>Acceso completo a todos los escenarios</li>
+                <li>Puntos de hidratación gratuita ilimitada</li>
+                <li>Pulsera textil con chip RFID de control</li>
+                <li>Liberación de coordenadas secretas 24h antes</li>
+              </ul>
+              <button type="button" class="btn-brutal btn-acid w-100">
+                [ SELECCIONADO ]
+              </button>
+            </div>
+
+            <!-- VIP / Backstage -->
+            <div class="tier-card" data-tier="vip">
+              <div class="tier-header">
+                <span class="badge-brutal badge-pink">[ DISPONIBLE ]</span>
+                <span class="font-mono text-pink" style="font-size: 0.75rem;">ALL ACCESS</span>
+              </div>
+              <h3 class="tier-title text-white">VIP / BACKSTAGE PASS</h3>
+              <div class="tier-price-gtq text-pink">Q. 950.00</div>
+              <div class="tier-price-usd">~$122.58 USD REF.</div>
+              <ul class="tier-features">
+                <li>Acceso preferencial sin fila de espera</li>
+                <li>Deck elevado Backstage junto a cabina DJ</li>
+                <li>Baños climatizados exclusivos</li>
+                <li>Barra privada con coctelería de autor</li>
+                <li>Kit oficial de mercancía eLoco Productions</li>
+              </ul>
+              <button type="button" class="btn-brutal btn-outline-acid w-100">
+                [ SELECCIONAR TIER ]
+              </button>
+            </div>
+
+            <!-- After-Hours Pass -->
+            <div class="tier-card" data-tier="after">
+              <div class="tier-header">
+                <span class="badge-brutal badge-orange">[ DISPONIBLE ]</span>
+                <span class="font-mono text-orange" style="font-size: 0.75rem;">04:00 AM+</span>
+              </div>
+              <h3 class="tier-title text-white">AFTER-HOURS PASS</h3>
+              <div class="tier-price-gtq text-orange">Q. 300.00</div>
+              <div class="tier-price-usd">~$38.70 USD REF.</div>
+              <ul class="tier-features">
+                <li>Acceso a partir de las 04:00 AM hasta el cierre</li>
+                <li>Válido para sunrise sessions en Reactor Stage</li>
+                <li>Punto de café de especialidad y energizantes</li>
+              </ul>
+              <button type="button" class="btn-brutal btn-outline-white w-100">
+                [ SELECCIONAR TIER ]
+              </button>
+            </div>
+          </div>
+
+          <!-- Checkout Sticky Lateral -->
+          <div class="checkout-sticky" id="checkout">
+            <h3 class="checkout-title">// RESUMEN DE ORDEN</h3>
+
+            <div class="checkout-summary-row">
+              <span>TIER SELECCIONADO:</span>
+              <strong id="coTierName" class="text-white">TIER 1 GENERAL</strong>
+            </div>
+            <div class="checkout-summary-row">
+              <span>PRECIO UNITARIO:</span>
+              <strong id="coUnitPrice" class="text-acid">Q. 450.00</strong>
+            </div>
+
+            <div class="my-3">
+              <label class="form-label-brutal">// CANTIDAD DE PASES (MÁX 10)</label>
+              <div class="qty-selector">
+                <button type="button" class="qty-btn" id="btnQtyMinus" aria-label="Disminuir">-</button>
+                <div class="qty-display" id="coQtyDisplay">1</div>
+                <button type="button" class="qty-btn" id="btnQtyPlus" aria-label="Aumentar">+</button>
+              </div>
+            </div>
+
+            <div class="checkout-summary-row">
+              <span>TASA DE CAMBIO REF.:</span>
+              <span class="text-muted">7.75 GTQ / 1 USD</span>
+            </div>
+
+            <div class="checkout-total-row">
+              <div>
+                <div class="text-muted" style="font-size: 0.75rem;">TOTAL A PAGAR</div>
+                <div class="checkout-total-amount" id="coTotalGtq">Q. 450.00</div>
+              </div>
+              <div class="text-end">
+                <div class="text-muted" style="font-size: 0.75rem;">REF. INTERNACIONAL</div>
+                <div class="font-mono text-cyan" id="coTotalUsd">~$58.06 USD</div>
+              </div>
+            </div>
+
+            <button type="button" class="btn-brutal btn-acid w-100" id="btnStartCheckout">
+              [ CONTINUAR AL PAGO // CHECKOUT ]
+            </button>
+
+            <div class="mt-3 text-center text-muted font-mono" style="font-size: 0.7rem;">
+              // TRANSACCIÓN SEGURA SAT FEL // RETIRO DIGITAL INMEDIATO
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         7. CATÁLOGO DE INGENIERÍA DE AUDIO Y SISTEMAS ACÚSTICOS (Vertiente 2)
+         ========================================================================== -->
+    <section class="section-brutal" id="equipos">
+      <div class="container-fluid px-lg-5">
+        <div class="section-header">
+          <div class="section-tag">// DIVISIÓN TÉCNICA AUDIOVISUAL</div>
+          <h2 class="section-title">ALQUILER DE EQUIPO // SOUND REINFORCEMENT &amp; FX</h2>
+          <p class="section-subtitle">
+            Infraestructura de sonido de concierto, iluminación robótica inteligente y diodos láser de grado industrial para productores y promotores en Guatemala.
+          </p>
+        </div>
+
+        <h3 class="font-display text-white mb-4">// SISTEMAS DE REFUERZO SONORO (LINE ARRAY &amp; SUBS)</h3>
+        <div class="gear-grid">
+          <!-- Set Micro / Club -->
+          <div class="gear-card tilt-card">
+            <div class="gear-category">// SET MICRO / CLUB (HASTA 150 PAX)</div>
+            <h4 class="gear-name">KIT BOUTIQUE ACOUSTICS</h4>
+            <ul class="gear-specs-list">
+              <li>2x Tops activos de fuente puntual 15" (QSC KW152 / JBL PRX / EV ETX)</li>
+              <li>2x Subwoofers activos de alto impacto 18" (QSC KS118 / JBL PRX818)</li>
+              <li>Cabina DJ: 2x Pioneer CDJ-2000NXS2 + Pioneer DJM-900NXS2 o Xone:96</li>
+              <li>Monitoreo de cabina: 2x Monitores activos 12" de 1000W RMS</li>
+              <li>Cableado balanceado Mogami / Neutrik + acondicionador de voltaje</li>
+            </ul>
+            <div class="gear-footer">
+              <span class="gear-price-tag">DESDE Q. 3,500.00 / jornada</span>
+              <a href="#cotizador" class="btn-brutal btn-outline-acid">[ COTIZAR ]</a>
+            </div>
+          </div>
+
+          <!-- Set Medium / Warehouse -->
+          <div class="gear-card tilt-card">
+            <div class="gear-category">// SET MEDIUM / WAREHOUSE (150–500 PAX)</div>
+            <h4 class="gear-name">KIT UNDERGROUND WAREHOUSE</h4>
+            <ul class="gear-specs-list">
+              <li>8x Módulos Line Array compacto (d&amp;b audiotechnik Y-Series / L-Acoustics Kara)</li>
+              <li>6x Subwoofers 18" procesados en configuración cardioide de cancelación trasera</li>
+              <li>Amplificación DSP con procesamiento FIR (Powersoft X8 / d&amp;b D80)</li>
+              <li>Cabina DJ: 3x Pioneer CDJ-3000 + Allen &amp; Heath Xone:96 o Pioneer DJM-V10</li>
+              <li>Monitoreo High-SPL: Arreglo Sub 15" + Top por cada lado del DJ</li>
+            </ul>
+            <div class="gear-footer">
+              <span class="gear-price-tag">DESDE Q. 8,000.00 / jornada</span>
+              <a href="#cotizador" class="btn-brutal btn-acid">[ COTIZAR ]</a>
+            </div>
+          </div>
+
+          <!-- Set Large / Festival Outdoor -->
+          <div class="gear-card tilt-card">
+            <div class="gear-category">// SET LARGE / FESTIVAL (500–2,500+ PAX)</div>
+            <h4 class="gear-name">KIT FESTIVAL MAIN STAGE</h4>
+            <ul class="gear-specs-list">
+              <li>24+ Cajas Line Array de gran formato suspendidas (L-Acoustics K2 / d&amp;b V-Series)</li>
+              <li>16x a 24x Subwoofers dobles 18" (L-Acoustics KS28 / Meyer Sound 1100-LFC)</li>
+              <li>Distribución de señal digital Dante redundante sobre fibra óptica blindada</li>
+              <li>Sistemas de relleno Front-fill y Out-fill con calibración SMAART v9</li>
+              <li>Monitoreo de escenario Side-fill completo + sistema In-Ear Shure PSM1000</li>
+            </ul>
+            <div class="gear-footer">
+              <span class="gear-price-tag">DESDE Q. 40,000.00 / jornada</span>
+              <a href="#cotizador" class="btn-brutal btn-pink">[ COTIZAR ]</a>
+            </div>
+          </div>
+        </div>
+
+        <h3 class="font-display text-white mb-4 mt-5">// ILUMINACIÓN ESPECIALIZADA, LÁSERES RGB &amp; FX</h3>
+        <div class="gear-grid">
+          <!-- Laser -->
+          <div class="gear-card tilt-card">
+            <div class="gear-category">// LÁSER VOLUMÉTRICO</div>
+            <h4 class="gear-name">LÁSER RGB INDUSTRIAL 10W–20W</h4>
+            <ul class="gear-specs-list">
+              <li>Diodos semiconductores RGB de 10,000mW a 20,000mW de potencia</li>
+              <li>Escáners galvanométricos ultrarrápidos &gt;30 kpps (gráficos y planos de luz)</li>
+              <li>Control nativo Pangolin FB4 / ILDA / Red Art-Net sobre Ethernet</li>
+              <li>Capacidad para túneles volumétricos, hojas de luz y proyecciones aéreas</li>
+            </ul>
+            <div class="gear-footer">
+              <span class="gear-price-tag">+ Q. 3,500.00 / unidad</span>
+              <a href="#cotizador" class="btn-brutal btn-outline-white">[ AGREGAR ]</a>
+            </div>
+          </div>
+
+          <!-- Moving Beams -->
+          <div class="gear-card tilt-card">
+            <div class="gear-category">// CABEZAS MÓVILES BEAM</div>
+            <h4 class="gear-name">BATERÍA BEAMS 17R / LED 300W</h4>
+            <ul class="gear-specs-list">
+              <li>Haz colimado ultraconcentrado de 1.5° a 3.0° con gran penetración óptica</li>
+              <li>Rueda de gobos estáticos y prismas rotatorios facetados de 8 y 16 caras</li>
+              <li>Movimiento Pan/Tilt de 540°/270° en 3 fases de aceleración instantánea</li>
+              <li>Disponibles en configuraciones de 4, 8, 12 y 16 luminarias sobre truss</li>
+            </ul>
+            <div class="gear-footer">
+              <span class="gear-price-tag">+ Q. 600.00 / unidad</span>
+              <a href="#cotizador" class="btn-brutal btn-outline-white">[ AGREGAR ]</a>
+            </div>
+          </div>
+
+          <!-- Pixel Tubes & UV -->
+          <div class="gear-card tilt-card">
+            <div class="gear-category">// TUBOS LED &amp; UV BLACKLIGHT</div>
+            <h4 class="gear-name">TUBOS PIXELADOS &amp; PROYECTORES UV</h4>
+            <ul class="gear-specs-list">
+              <li>Kits de 8 Tubos LED Astera Titan con mapeo píxel por píxel inalámbrico</li>
+              <li>Batería interna de 20 horas de autonomía y control CRMX inalámbrico</li>
+              <li>Proyectores LED UV de 365 nm a 395 nm para telas reactivas y string-art</li>
+              <li>Máquinas de niebla continua Hazer 1500W DMX para visibilidad perfecta</li>
+            </ul>
+            <div class="gear-footer">
+              <span class="gear-price-tag">DESDE Q. 450.00 A Q. 2,800.00</span>
+              <a href="#cotizador" class="btn-brutal btn-outline-white">[ AGREGAR ]</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         8. COTIZADOR INTERACTIVO DE TECH RIDER (#cotizador)
+         ========================================================================== -->
+    <section class="section-brutal" id="cotizador">
+      <div class="container-fluid px-lg-5">
+        <div class="section-header">
+          <div class="section-tag">// TECH RIDER BUILDER // GUATEMALA</div>
+          <h2 class="section-title">COTIZADOR INTERACTIVO // EQUIPO &amp; SERVICIOS</h2>
+          <p class="section-subtitle">
+            Diseña el rider técnico exacto para tu evento. Cálculo inmediato en Quetzales (GTQ) con desglose del 12% de IVA (SAT FEL) y exportación directa a WhatsApp o correo institucional.
+          </p>
+        </div>
+
+        <form id="techRiderForm">
+          <div class="quoter-layout">
+            <div class="quoter-main-steps">
+              <!-- PASO 1: Parámetros del Evento -->
+              <div class="quoter-step-card">
+                <div class="quoter-step-header">
+                  <span class="quoter-step-num">01</span>
+                  <h3 class="quoter-step-title">PARÁMETROS DEL EVENTO Y ESTIMACIÓN DE AFORO</h3>
+                </div>
+
+                <div class="row g-3 mb-3">
+                  <div class="col-md-6">
+                    <label class="form-label-brutal" for="riderEventType">// TIPO DE EVENTO</label>
+                    <select class="form-control-brutal" id="riderEventType">
+                      <option value="[UR] Rave Subterráneo / Warehouse">[UR] Rave Subterráneo / Almacén Cerrado (8–14 hrs)</option>
+                      <option value="[PC] Festival Psicodélico Outdoor">[PC] Encuentro Psicodélico / Campamento (24–72 hrs)</option>
+                      <option value="[CG] Cyber-Goth & Industrial Wave">[CG] Club Wave Retrociberpunk (6–10 hrs)</option>
+                      <option value="[PT] Post-Trance & Neo-Rave">[PT] Terraza Day-to-Night (8–12 hrs)</option>
+                      <option value="[PV] Sesión Privada / Villa">[PV] Evento Privado / Villa / Azotea (6–12 hrs)</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label-brutal" for="riderLocation">// LOCACIÓN / DEPARTAMENTO</label>
+                    <select class="form-control-brutal" id="riderLocation">
+                      <option value="Ciudad de Guatemala (Metropolitana)">Ciudad de Guatemala (Zonas Industriales)</option>
+                      <option value="Antigua Guatemala / Sacatepéquez">Antigua Guatemala (Fincas Patrimoniales)</option>
+                      <option value="Sololá / Lago Atitlán">Sololá / Lago de Atitlán (Área Sensible)</option>
+                      <option value="Escuintla / Costa Pacífico">Escuintla / Costa del Pacífico</option>
+                      <option value="Otro Departamento">Otro Departamento del Interior</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label class="form-label-brutal">// SUMINISTRO ELÉCTRICO EN SITIO</label>
+                  <label class="checkbox-item-brutal">
+                    <input type="checkbox" id="quoterPowerGen" value="4500">
+                    <div class="checkbox-info">
+                      <div class="checkbox-title">Planta Eléctrica Diésel Autónoma Insonorizada (+ Q. 4,500.00 / jornada)</div>
+                      <div class="checkbox-sub">Generador de 75kVA con tablero de distribución camlock y combustible incluido para 12 horas.</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- PASO 2: Selección de Kit de Audio Base -->
+              <div class="quoter-step-card">
+                <div class="quoter-step-header">
+                  <span class="quoter-step-num">02</span>
+                  <h3 class="quoter-step-title">PAQUETE BASE DE REFUERZO ACÚSTICO</h3>
+                </div>
+
+                <div class="radio-cards-grid">
+                  <label class="radio-card-label">
+                    <input type="radio" name="sound_kit" value="boutique">
+                    <div class="radio-card-box">
+                      <div class="radio-card-title">KIT BOUTIQUE // 150 PAX</div>
+                      <div class="radio-card-desc">2 Tops 15" + 2 Subs 18" + Cabina Pioneer CDJ-2000NXS2</div>
+                      <div class="text-acid font-mono font-bold mt-2">Q. 3,500.00</div>
+                    </div>
+                  </label>
+
+                  <label class="radio-card-label">
+                    <input type="radio" name="sound_kit" value="warehouse" checked>
+                    <div class="radio-card-box">
+                      <div class="radio-card-title">KIT WAREHOUSE // 500 PAX</div>
+                      <div class="radio-card-desc">8 Módulos Line Array + 6 Subs Cardioide + CDJ-3000 / Xone:96</div>
+                      <div class="text-acid font-mono font-bold mt-2">Q. 8,000.00</div>
+                    </div>
+                  </label>
+
+                  <label class="radio-card-label">
+                    <input type="radio" name="sound_kit" value="camp">
+                    <div class="radio-card-box">
+                      <div class="radio-card-title">KIT PSY-CAMP // 1,000 PAX</div>
+                      <div class="radio-card-desc">12 Line Array torres truss + 10 Subs dobles + DSP Powersoft</div>
+                      <div class="text-acid font-mono font-bold mt-2">Q. 18,000.00</div>
+                    </div>
+                  </label>
+
+                  <label class="radio-card-label">
+                    <input type="radio" name="sound_kit" value="festival">
+                    <div class="radio-card-box">
+                      <div class="radio-card-title">KIT FESTIVAL // 2,500+ PAX</div>
+                      <div class="radio-card-desc">24+ L-Acoustics K2 + 20 Subs KS28 + Fibra Óptica Dante</div>
+                      <div class="text-acid font-mono font-bold mt-2">Q. 40,000.00</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+
+              <!-- PASO 3: Iluminación, Láser & FX -->
+              <div class="quoter-step-card">
+                <div class="quoter-step-header">
+                  <span class="quoter-step-num">03</span>
+                  <h3 class="quoter-step-title">MÓDULOS DE ILUMINACIÓN, LÁSER &amp; ATMÓSFERA</h3>
+                </div>
+
+                <label class="checkbox-item-brutal">
+                  <input type="checkbox" class="fx-checkbox-item" data-price="3500" data-name="Láser RGB Volumétrico 10W–20W FB4">
+                  <div class="checkbox-info">
+                    <div class="checkbox-title">Láser RGB Volumétrico de Alta Potencia (10W–20W)</div>
+                    <div class="checkbox-sub">Escáner &gt;30 kpps, Pangolin FB4 integrado (+ Q. 3,500.00 / u)</div>
+                  </div>
+                  <div class="checkbox-price">+ Q. 3,500.00</div>
+                </label>
+
+                <div class="checkbox-item-brutal d-flex align-items-center justify-content-between flex-wrap gap-2">
+                  <div class="d-flex align-items-center gap-3">
+                    <input type="checkbox" class="fx-checkbox-item" data-price="600" data-name="Batería Cabezas Móviles Beam">
+                    <div class="checkbox-info">
+                      <div class="checkbox-title">Batería de Cabezas Móviles Beam 17R / LED</div>
+                      <div class="checkbox-sub">Haces ultraconcentrados 2° (+ Q. 600.00 por luminaria)</div>
+                    </div>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="text-muted font-mono" style="font-size: 0.75rem;">CANTIDAD:</span>
+                    <select class="form-control-brutal fx-qty-select" style="width: 70px; padding: 0.3rem;">
+                      <option value="4">4x</option>
+                      <option value="8">8x</option>
+                      <option value="12">12x</option>
+                      <option value="16">16x</option>
+                    </select>
+                  </div>
+                </div>
+
+                <label class="checkbox-item-brutal">
+                  <input type="checkbox" class="fx-checkbox-item" data-price="2800" data-name="Kit 8 Tubos LED Astera Titan Pixel">
+                  <div class="checkbox-info">
+                    <div class="checkbox-title">Sistema de Tubos LED Astera Titan Pixel Mapeados</div>
+                    <div class="checkbox-sub">Kit de 8 tubos inalámbricos con cargador y transmisor CRMX Art-Net</div>
+                  </div>
+                  <div class="checkbox-price">+ Q. 2,800.00</div>
+                </label>
+
+                <label class="checkbox-item-brutal">
+                  <input type="checkbox" class="fx-checkbox-item" data-price="450" data-name="Proyectores UV Blacklight 365nm">
+                  <div class="checkbox-info">
+                    <div class="checkbox-title">Proyectores LED Ultravioleta de Alta Potencia (365 nm – 395 nm)</div>
+                    <div class="checkbox-sub">Especial para string-art psicodélico, telas reactivas y body-paint</div>
+                  </div>
+                  <div class="checkbox-price">+ Q. 450.00</div>
+                </label>
+
+                <label class="checkbox-item-brutal">
+                  <input type="checkbox" class="fx-checkbox-item" data-price="800" data-name="Máquinas de Neblina Hazer 1500W DMX">
+                  <div class="checkbox-info">
+                    <div class="checkbox-title">Generador de Neblina Continua (Hazer 1500W DMX)</div>
+                    <div class="checkbox-sub">Neblina microscópica base agua sin residuo aceitoso para rayos de luz</div>
+                  </div>
+                  <div class="checkbox-price">+ Q. 800.00</div>
+                </label>
+
+                <label class="checkbox-item-brutal">
+                  <input type="checkbox" class="fx-checkbox-item" data-price="4500" data-name="Pantalla LED Exterior P2.9 (4x2m)">
+                  <div class="checkbox-info">
+                    <div class="checkbox-title">Pantalla de Video LED Exterior Pitch 2.9 mm (Módulo 4x2m)</div>
+                    <div class="checkbox-sub">Brillo &gt;4500 nits, tasa de refresco 3840 Hz con procesador NovaStar</div>
+                  </div>
+                  <div class="checkbox-price">+ Q. 4,500.00</div>
+                </label>
+              </div>
+
+              <!-- PASO 4: Soporte Técnico y Normativa CONRED -->
+              <div class="quoter-step-card">
+                <div class="quoter-step-header">
+                  <span class="quoter-step-num">04</span>
+                  <h3 class="quoter-step-title">SOPORTE TÉCNICO EN SALA Y AVAL NORMATIVO CONRED</h3>
+                </div>
+
+                <label class="checkbox-item-brutal">
+                  <input type="checkbox" class="tech-support-checkbox" data-price="1500" data-name="Ingeniero FOH & Calibración Acústica" checked>
+                  <div class="checkbox-info">
+                    <div class="checkbox-title">Ingeniero de Sonido FOH &amp; Ajuste de Sistemas (Operación Continua)</div>
+                    <div class="checkbox-sub">Control en sala, calibración con analizador SMAART y monitoreo de SPL</div>
+                  </div>
+                  <div class="checkbox-price">+ Q. 1,500.00</div>
+                </label>
+
+                <label class="checkbox-item-brutal">
+                  <input type="checkbox" class="tech-support-checkbox" data-price="1200" data-name="Diseñador Lumínico / Operador Láser en Vivo">
+                  <div class="checkbox-info">
+                    <div class="checkbox-title">Diseñador Lumínico / Operador Láser en Vivo (VJ &amp; LJ)</div>
+                    <div class="checkbox-sub">Consola MA Lighting / Chamsys con programación personalizada por track</div>
+                  </div>
+                  <div class="checkbox-price">+ Q. 1,200.00</div>
+                </label>
+
+                <label class="checkbox-item-brutal">
+                  <input type="checkbox" class="tech-support-checkbox" data-price="2500" data-name="Carpeta Técnica NRD-2 / NRD-4 CONRED">
+                  <div class="checkbox-info">
+                    <div class="checkbox-title">Carpeta de Memoria Técnica para Aforo NRD-2 / NRD-4 CONRED</div>
+                    <div class="checkbox-sub">Planos de evacuación, cálculo de cargas eléctricas y firma colegiada profesional</div>
+                  </div>
+                  <div class="checkbox-price">+ Q. 2,500.00</div>
+                </label>
+              </div>
+
+              <!-- PASO 5: Datos de Contacto y Facturación -->
+              <div class="quoter-step-card">
+                <div class="quoter-step-header">
+                  <span class="quoter-step-num">05</span>
+                  <h3 class="quoter-step-title">DATOS DEL PRODUCTOR &amp; EMISIÓN SAT FEL</h3>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label class="form-label-brutal" for="riderClientName">// PRODUCTOR / RAZÓN SOCIAL</label>
+                    <input type="text" class="form-control-brutal" id="riderClientName" placeholder="EJ. PRODUCCIONES DEL BOSQUE S.A." required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label-brutal" for="riderClientNit">// NIT SAT (O CF)</label>
+                    <input type="text" class="form-control-brutal" id="riderClientNit" placeholder="EJ. 12345678-9 O CF" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label-brutal" for="riderClientEmail">// CORREO ELECTRÓNICO (ENVÍO DE PDF)</label>
+                    <input type="email" class="form-control-brutal" id="riderClientEmail" placeholder="contacto@productora.gt" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label-brutal" for="riderClientPhone">// WHATSAPP DE COORDINACIÓN</label>
+                    <input type="tel" class="form-control-brutal" id="riderClientPhone" placeholder="+502 5555-5555" required>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SIDEBAR RESUMEN FLOTANTE -->
+            <div class="quoter-sidebar">
+              <h3 class="checkout-title">// TECH RIDER // RESUMEN</h3>
+
+              <div class="mb-3">
+                <div class="text-muted font-mono" style="font-size: 0.75rem; margin-bottom: 0.5rem;">DESGLOSE DE PARTIDAS:</div>
+                <ul class="quoter-breakdown-list" id="quoterBreakdownList">
+                  <!-- Inyectado dinámicamente -->
+                </ul>
+              </div>
+
+              <div class="checkout-summary-row">
+                <span>SUBTOTAL:</span>
+                <strong id="quoterSubtotalGtq" class="text-white">Q. 0.00</strong>
+              </div>
+              <div class="checkout-summary-row">
+                <span>IVA SAT (12%):</span>
+                <strong id="quoterIvaGtq" class="text-muted">Q. 0.00</strong>
+              </div>
+
+              <div class="checkout-total-row">
+                <div>
+                  <div class="text-muted" style="font-size: 0.75rem;">TOTAL ESTIMADO</div>
+                  <div class="checkout-total-amount" id="quoterTotalGtq">Q. 0.00</div>
+                </div>
+                <div class="text-end">
+                  <div class="text-muted" style="font-size: 0.75rem;">REF. USD</div>
+                  <div class="font-mono text-cyan" id="quoterTotalUsd">~$0.00 USD</div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column gap-2 mt-4">
+                <button type="button" class="btn-brutal btn-acid w-100" id="btnSubmitRider">
+                  [ GENERAR TECH RIDER // ENVIAR ]
+                </button>
+                <button type="button" class="btn-brutal btn-outline-white w-100" id="btnWhatsappRider">
+                  [ EXPORTAR EN WHATSAPP RAW ]
+                </button>
+              </div>
+
+              <div class="mt-3 text-center text-muted font-mono" style="font-size: 0.7rem;">
+                // RIDER SUJETO A REVISIÓN DE FACTIBILIDAD TÉCNICA Y CONTRATO
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         9. EXPERIENCIAS & AFTERMOVIE TEASER (#experiencias)
+         ========================================================================== -->
+    <section class="section-brutal" id="experiencias">
+      <div class="container-fluid px-lg-5">
+        <div class="section-header">
+          <div class="section-tag">// ARCHIVO AUDIOVISUAL</div>
+          <h2 class="section-title">EXPERIENCIAS PREVIAS // AFTERMOVIE 21:9</h2>
+          <p class="section-subtitle">
+            Documentación visual de nuestros despliegues. Grabaciones multicámara en 4K con registro de audio masterizado y público inmerso en frecuencias subterráneas.
+          </p>
+        </div>
+
+        <div class="aftermovie-container tilt-card" id="aftermovieContainer">
+          <img src="img/aftermovie-poster.svg" alt="Aftermovie Poster" class="aftermovie-poster">
+          <div class="aftermovie-overlay">
+            <button type="button" class="play-aftermovie-btn" id="playAftermovieBtn" aria-label="Reproducir Aftermovie">
+              ▶
+            </button>
+            <div class="badge-brutal badge-acid">[ TRANSMISIÓN 4K // DOLBY ATMOS RAW ]</div>
+            <div class="font-mono text-white text-center" style="font-size: 0.85rem;">
+              HAZ CLICK PARA VER EL RECAP OFICIAL DE TEMPORADAS ANTERIORES
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         10. PROTOCOLO RAVE, NORMATIVAS & GUESTLIST (#protocolo)
+         ========================================================================== -->
+    <section class="section-brutal" id="protocolo">
+      <div class="container-fluid px-lg-5">
+        <div class="section-header">
+          <div class="section-tag">// MARCO LEGAL &amp; SEGURIDAD</div>
+          <h2 class="section-title">RAVE PROTOCOL // CONRED &amp; CONVIVENCIA</h2>
+          <p class="section-subtitle">
+            Operamos bajo los más estrictos estándares de seguridad, respeto irrestricto, protección del entorno y cumplimiento de las leyes de la República de Guatemala.
+          </p>
+        </div>
+
+        <!-- Acordeón Brutalista -->
+        <div class="accordion-brutal" id="policiesAccordion">
+          <!-- Item 1 -->
+          <div class="accordion-item-brutal">
+            <button type="button" class="accordion-header-btn" aria-expanded="false">
+              <span>// 01. CUMPLIMIENTO CONRED NRD-2 Y NRD-4 (SEGURIDAD Y AFORO)</span>
+              <span>+</span>
+            </button>
+            <div class="accordion-collapse-panel">
+              Todos los eventos de eLoco Productions cuentan con memorias técnicas avaladas por ingenieros colegiados. Respetamos las Normas de Reducción de Desastres (NRD-2 y NRD-4) de la Coordinadora Nacional para la Reducción de Desastres (CONRED), garantizando salidas de emergencia despejadas, señalética fotoluminiscente, rutas de evacuación señalizadas y presencia de paramédicos certificados durante toda la jornada.
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="accordion-item-brutal">
+            <button type="button" class="accordion-header-btn" aria-expanded="false">
+              <span>// 02. SEGURIDAD PRIVADA REGISTRADA DIGESSP</span>
+              <span>+</span>
+            </button>
+            <div class="accordion-collapse-panel">
+              La custodia del perímetro y los controles de acceso son gestionados por personal de seguridad privada debidamente acreditado ante la Dirección General de Servicios de Seguridad Privada (DIGESSP). Aplicamos política de CERO TOLERANCIA a armas de cualquier tipo y estricto respeto a los derechos individuales de los asistentes.
+            </div>
+          </div>
+
+          <!-- Item 3 -->
+          <div class="accordion-item-brutal">
+            <button type="button" class="accordion-header-btn" aria-expanded="false">
+              <span>// 03. POLÍTICA "LEAVE NO TRACE" EN ÁREAS NATURALES (CONAP)</span>
+              <span>+</span>
+            </button>
+            <div class="accordion-collapse-panel">
+              En nuestras producciones al aire libre (Lago de Atitlán, bosques de Sacatepéquez o playas del Pacífico), implementamos el principio de No Dejar Rastro. Disponemos de estaciones de clasificación de residuos, baños secos ecológicos y jornadas de limpieza posterior para dejar el terreno en condiciones idénticas o mejores a las encontradas.
+            </div>
+          </div>
+
+          <!-- Item 4 -->
+          <div class="accordion-item-brutal">
+            <button type="button" class="accordion-header-btn" aria-expanded="false">
+              <span>// 04. LICENCIAS DE DERECHOS DE AUTOR (AGINPRO / MUSICARTES / AEI)</span>
+              <span>+</span>
+            </button>
+            <div class="accordion-collapse-panel">
+              eLoco Productions cumple con la legislación de propiedad intelectual y derechos conexos de Guatemala, gestionando los pagos y licencias correspondientes ante AGINPRO, Musicartes y AEI para la ejecución pública de música y remuneración equitativa a los creadores.
+            </div>
+          </div>
+
+          <!-- Item 5 -->
+          <div class="accordion-item-brutal">
+            <button type="button" class="accordion-header-btn" aria-expanded="false">
+              <span>// 05. FACTURACIÓN ELECTRÓNICA SAT FEL &amp; POLÍTICA DE REEMBOLSOS</span>
+              <span>+</span>
+            </button>
+            <div class="accordion-collapse-panel">
+              Cada boleto o servicio de alquiler de equipo emite su Comprobante de Retención o Factura Electrónica en Línea (FEL) con el NIT o CF provisto. En caso de cancelación por causas de fuerza mayor o desastres climáticos, el valor del boleto es transferible a la siguiente edición oficial o reembolsable según las directrices de la DIACO.
+            </div>
+          </div>
+        </div>
+
+        <!-- Secret Guestlist Form -->
+        <div class="guestlist-box">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+              <span class="badge-brutal badge-acid mb-2">[ ALERTA VIP // PRIORIDAD ]</span>
+              <h3 class="font-display text-white" style="font-size: 1.75rem;">SECRET GUESTLIST &amp; VIP DROPS</h3>
+              <p class="text-secondary font-mono mb-0" style="font-size: 0.85rem;">
+                Suscríbete para recibir por SMS y correo las coordenadas GPS exactas 24 horas antes de cada rave, acceso a preventas exclusivas y códigos para fiestas secretas después de hora.
+              </p>
+            </div>
+            <div class="col-lg-6">
+              <form id="guestlistForm">
+                <div class="row g-2">
+                  <div class="col-sm-6">
+                    <input type="email" class="form-control-brutal" id="guestEmail" placeholder="tu-correo@dominio.gt" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <input type="tel" class="form-control-brutal" id="guestPhone" placeholder="+502 0000-0000" required>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <button type="submit" class="btn-brutal btn-acid w-100">
+                      [ UNIRME A LA GUESTLIST SECRETA ]
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       11. FOOTER OFICIAL
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container-fluid px-lg-5">
+      <div class="footer-grid">
+        <div>
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="img/LOGO.png" alt="eLoco" style="width: 32px; height: 32px; border: 1px solid var(--color-border-bright);">
+            <span class="font-display font-bold text-white" style="letter-spacing: 0.08em;">eLoco PRODUCTIONS</span>
+          </div>
+          <p class="text-muted" style="font-size: 0.75rem; line-height: 1.6;">
+            Arquitectura sonora transgresora, producción de eventos masivos de música electrónica y servicios técnicos de ingeniería de sonido y láser en Guatemala.
+          </p>
+          <div class="text-acid" style="font-size: 0.75rem;">NIT: 10482910-K // SAT FEL REGISTRADO</div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">// NAVEGACIÓN</div>
+          <ul class="footer-links">
+            <li><a href="#eventos">// Calendario Rave</a></li>
+            <li><a href="#lineup">// Line-Up Dinámico</a></li>
+            <li><a href="#tickets">// Venta de Pases</a></li>
+            <li><a href="#equipos">// Catálogo de Sonido &amp; Luces</a></li>
+            <li><a href="#cotizador">// Tech Rider Builder</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">// CONTACTO DIRECTO</div>
+          <ul class="footer-links">
+            <li><span>// GUATEMALA: Ciudad de Guatemala &amp; Departamentos</span></li>
+            <li><a href="mailto:guestlist@locoproductions.gt">// guestlist@locoproductions.gt</a></li>
+            <li><a href="mailto:pagos@locoproductions.gt">// pagos@locoproductions.gt</a></li>
+            <li><a href="https://wa.me/50255550000" target="_blank" rel="noopener">// WhatsApp: +502 5555-0000</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">// HORARIOS DE ATENCIÓN</div>
+          <p class="text-secondary" style="font-size: 0.75rem;">
+            Despacho Técnico &amp; Almacén:<br>
+            Lunes a Viernes: 09:00 - 18:00<br>
+            Guardia de Emergencia para Eventos: 24/7
+          </p>
+          <div class="badge-brutal badge-cyan mt-2">DANTE CERTIFIED LEVEL 3</div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 eLoco Productions. Todos los derechos reservados. Estética Brutalismo Psicodélico.</div>
+        <div class="d-flex gap-3">
+          <a href="#protocolo" class="text-muted">Términos</a>
+          <a href="#protocolo" class="text-muted">Políticas NRD-2</a>
+          <a href="#top" class="text-acid">[ SUBIR AL INICIO ▲ ]</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       12. MODAL DE PAGO SEGURO (#pagoSeguroModal)
+       ========================================================================== -->
+  <div class="modal-backdrop-brutal" id="pagoSeguroModal" role="dialog" aria-modal="true" aria-labelledby="payModalTitle">
+    <div class="modal-dialog-brutal">
+      <div class="modal-header-brutal">
+        <div>
+          <span class="badge-brutal badge-acid mb-1">[ PASARELA SEGURA SAT FEL ]</span>
+          <h3 class="modal-title-brutal" id="payModalTitle">CHECKOUT // PAGO DE PASES</h3>
+        </div>
+        <button type="button" class="modal-close-btn" data-pay-close aria-label="Cerrar modal">✕</button>
+      </div>
+
+      <div class="bg-card border-brutal p-3 mb-3" id="payModalSummary">
+        <!-- Resumen inyectado -->
+      </div>
+
+      <form id="checkoutPayForm">
+        <div class="form-group-brutal">
+          <label class="form-label-brutal" for="payMethodSelect">// SELECCIONA MÉTODO DE PAGO</label>
+          <select class="form-control-brutal" id="payMethodSelect">
+            <option value="card">Tarjeta de Crédito / Débito (Visa / Mastercard)</option>
+            <option value="transfer">Transferencia Bancaria Inmediata (BI / BAM / G&amp;T)</option>
+            <option value="qr">Pago con QR BAC / Niubiz</option>
+            <option value="zigi">Billetera Digital Zigi / Fri</option>
+            <option value="paypal">PayPal Express (USD Equivalente)</option>
+          </select>
+        </div>
+
+        <div class="form-group-brutal">
+          <label class="form-label-brutal" for="payCardHolder">// NOMBRE DEL TITULAR (COMO EN EL DOCUMENTO)</label>
+          <input type="text" class="form-control-brutal" id="payCardHolder" placeholder="JUAN PÉREZ" required>
+        </div>
+
+        <div class="form-group-brutal">
+          <label class="form-label-brutal" for="payCardNumber">// NÚMERO DE TARJETA (DEMO)</label>
+          <input type="text" class="form-control-brutal" id="payCardNumber" placeholder="4000 1234 5678 9010" maxlength="19" required>
+        </div>
+
+        <div class="row g-2 mb-3">
+          <div class="col-6">
+            <label class="form-label-brutal" for="payCardExp">// VENCIMIENTO (MM/AA)</label>
+            <input type="text" class="form-control-brutal" id="payCardExp" placeholder="12/28" maxlength="5" required>
+          </div>
+          <div class="col-6">
+            <label class="form-label-brutal" for="payCardCvv">// CVV</label>
+            <input type="password" class="form-control-brutal" id="payCardCvv" placeholder="123" maxlength="4" required>
+          </div>
+        </div>
+
+        <div class="form-group-brutal">
+          <label class="form-label-brutal" for="payEmail">// CORREO ELECTRÓNICO (PARA EMISIÓN FEL Y QR)</label>
+          <input type="email" class="form-control-brutal" id="payEmail" placeholder="juan.perez@correo.com" required>
+        </div>
+
+        <button type="submit" class="btn-brutal btn-acid w-100 py-3 mt-2">
+          [ CONFIRMAR Y AUTORIZAR PAGO ]
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       13. MODAL GENÉRICO ACCESIBLE (#modalBackdrop)
+       ========================================================================== -->
+  <div class="modal-backdrop-brutal" id="modalBackdrop" role="dialog" aria-modal="true" aria-labelledby="modalBackdropTitle">
+    <div class="modal-dialog-brutal">
+      <div class="modal-header-brutal">
+        <h3 class="modal-title-brutal" id="modalBackdropTitle">// MENSAJE DEL SISTEMA</h3>
+        <button type="button" class="modal-close-btn" id="modalBackdropClose" aria-label="Cerrar modal">✕</button>
+      </div>
+      <div id="modalBackdropBody">
+        <!-- Contenido dinámico -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Modular -->
+  <script src="loco-engine.js" defer></script>
+</body>
+</html>

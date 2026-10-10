@@ -1,0 +1,182 @@
+/**
+ * DESIGN TOKENS // eLoco Productions
+ * Estética: Brutalismo Psicodélico (Psych-Brutalism)
+ * Fuente de verdad del sistema de diseño
+ */
+
+:root {
+  /* ==========================================================================
+     1. COLORES DE FONDO, BORDES Y SUPERFICIES
+     ========================================================================== */
+  --color-bg-deep: #080808;
+  --color-bg-darker: #0D0B14;
+  --color-bg-card: #111111;
+  --color-bg-panel: #14121E;
+  --color-bg-hover: #181622;
+  --color-bg-overlay: rgba(8, 8, 8, 0.88);
+
+  --color-border: #1A1A1A;
+  --color-border-bright: #2A2A32;
+  --color-border-highlight: #3D3D48;
+  --color-border-acid: #39FF14;
+  --color-border-pink: #FF007F;
+  --color-border-cyan: #00FFFF;
+
+  /* ==========================================================================
+     2. NEONES DE MARCA Y ACENTOS PSICODÉLICOS
+     ========================================================================== */
+  --acid-green: #39FF14;
+  --psy-neon-green: #00FF66;
+  --electric-violet: #8A2BE2;
+  --neon-orange: #FF5F1F;
+  --cyber-pink: #FF007F;
+  --neon-cyan: #00FFFF;
+  --neon-red: #FF073A;
+  --neon-yellow: #FFE800;
+
+  --accent-primary: var(--acid-green);
+  --accent-secondary: var(--electric-violet);
+  --accent-tertiary: var(--neon-orange);
+  --accent-quaternary: var(--cyber-pink);
+  --accent-cyan: var(--neon-cyan);
+  --accent-danger: var(--neon-red);
+
+  /* ==========================================================================
+     3. JERARQUÍA TIPOGRÁFICA Y COLOR DE TEXTO
+     ========================================================================== */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B0B0B0;
+  --color-text-muted: #666666;
+  --color-text-dim: #444444;
+  --color-text-invert: #080808;
+
+  --font-display: 'Space Grotesk', 'Orbitron', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Space Mono', SFMono-Regular, monospace;
+  --font-body: 'IBM Plex Mono', 'Inter', monospace;
+
+  /* Escala tipográfica fluida */
+  --fs-2xs: clamp(0.65rem, 0.6rem + 0.25vw, 0.75rem);
+  --fs-xs: clamp(0.75rem, 0.7rem + 0.3vw, 0.85rem);
+  --fs-sm: clamp(0.85rem, 0.8rem + 0.35vw, 0.95rem);
+  --fs-base: clamp(0.95rem, 0.9rem + 0.4vw, 1.05rem);
+  --fs-md: clamp(1.1rem, 1rem + 0.55vw, 1.3rem);
+  --fs-lg: clamp(1.35rem, 1.2rem + 0.8vw, 1.65rem);
+  --fs-xl: clamp(1.65rem, 1.4rem + 1.2vw, 2.2rem);
+  --fs-2xl: clamp(2.1rem, 1.8rem + 1.8vw, 3rem);
+  --fs-3xl: clamp(2.8rem, 2.3rem + 2.5vw, 4.2rem);
+  --fs-4xl: clamp(3.6rem, 2.8rem + 4vw, 5.8rem);
+  --fs-5xl: clamp(4.4rem, 3.2rem + 6.5vw, 8.5rem);
+
+  /* ==========================================================================
+     4. ESPACIADO (SISTEMA ESCALAR)
+     ========================================================================== */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* ==========================================================================
+     5. REGLAS DURAS BRUTALISTAS (0px RADIUS, SOMBRAS SÓLIDAS DESPLAZADAS)
+     ========================================================================== */
+  --border-radius: 0px !important;
+  --radius-none: 0px;
+
+  --border-width-thin: 1px;
+  --border-width-base: 2px;
+  --border-width-thick: 3px;
+
+  --border-solid-base: 1px solid var(--color-border);
+  --border-solid-bright: 1px solid var(--color-border-bright);
+  --border-solid-acid: 2px solid var(--acid-green);
+  --border-solid-pink: 2px solid var(--cyber-pink);
+  --border-solid-violet: 2px solid var(--electric-violet);
+
+  /* Sombras duras desplazadas sin blur (Brutalist Box-Shadows) */
+  --shadow-brutal-sm: 2px 2px 0px #000000;
+  --shadow-brutal: 4px 4px 0px #000000;
+  --shadow-brutal-bright: 4px 4px 0px var(--color-border-bright);
+  --shadow-brutal-lg: 6px 6px 0px #000000;
+  --shadow-brutal-xl: 8px 8px 0px #000000;
+
+  --shadow-neon-green: 4px 4px 0px var(--acid-green);
+  --shadow-neon-pink: 4px 4px 0px var(--cyber-pink);
+  --shadow-neon-cyan: 4px 4px 0px var(--neon-cyan);
+  --shadow-neon-violet: 4px 4px 0px var(--electric-violet);
+  --shadow-neon-orange: 4px 4px 0px var(--neon-orange);
+
+  /* Glow suave atmosférico */
+  --glow-acid: 0 0 25px rgba(57, 255, 20, 0.4);
+  --glow-pink: 0 0 25px rgba(255, 0, 127, 0.4);
+  --glow-violet: 0 0 25px rgba(138, 43, 226, 0.4);
+  --glow-cyan: 0 0 25px rgba(0, 255, 255, 0.4);
+
+  /* ==========================================================================
+     6. GRADIENTES OFICIALES Y TEXTURA
+     ========================================================================== */
+  --gradient-primary: linear-gradient(135deg, var(--acid-green) 0%, var(--electric-violet) 100%);
+  --gradient-secondary: linear-gradient(135deg, var(--neon-orange) 0%, var(--cyber-pink) 100%);
+  --gradient-tertiary: linear-gradient(135deg, var(--electric-violet) 0%, var(--neon-cyan) 100%);
+  --gradient-dark: linear-gradient(180deg, rgba(13, 11, 20, 0.8) 0%, rgba(8, 8, 8, 0.98) 100%);
+  --gradient-radial: radial-gradient(circle at 50% 50%, rgba(57, 255, 20, 0.12) 0%, transparent 70%);
+
+  /* ==========================================================================
+     7. TRANSICIONES Y TIEMPOS
+     ========================================================================== */
+  --transition-instant: 70ms ease;
+  --transition-fast: 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 250ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 400ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-bounce: 500ms cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* ==========================================================================
+     8. CAPAS Y Z-INDEX
+     ========================================================================== */
+  --z-bg: -1;
+  --z-base: 1;
+  --z-canvas-fx: 4;
+  --z-dropdown: 600;
+  --z-tooltip: 700;
+  --z-header: 900;
+  --z-modal: 900;
+  --z-ticker: 1000;
+  --z-progress: 1100;
+  --z-cursor: 1200;
+  --z-skip-link: 2000;
+
+  /* ==========================================================================
+     9. DIMENSIONES Y LAYOUT
+     ========================================================================== */
+  --container-max: 1440px;
+  --header-height: 80px;
+  --ticker-height: 38px;
+
+  /* ==========================================================================
+     10. VARIABLES DINÁMICAS REACTIVAS (CINEMA FX)
+     ========================================================================== */
+  --mx: 0px;
+  --my: 0px;
+  --mxn: 0;
+  --myn: 0;
+  --sy: 0;
+  --gx: 50%;
+  --gy: 50%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-instant: 0ms !important;
+    --transition-fast: 0ms !important;
+    --transition-base: 0ms !important;
+    --transition-slow: 0ms !important;
+    --transition-bounce: 0ms !important;
+  }
+}

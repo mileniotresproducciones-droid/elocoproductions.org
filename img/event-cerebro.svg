@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="cerebroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080808"/>
+      <stop offset="50%" stop-color="#14061A"/>
+      <stop offset="100%" stop-color="#240722"/>
+    </linearGradient>
+    <filter id="pinkGlow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#cerebroGrad)"/>
+
+  <!-- Geometric Psy Rays -->
+  <g stroke="#FF007F" stroke-width="1.5" opacity="0.35">
+    <line x1="400" y1="225" x2="0" y2="0"/>
+    <line x1="400" y1="225" x2="200" y2="0"/>
+    <line x1="400" y1="225" x2="400" y2="0"/>
+    <line x1="400" y1="225" x2="600" y2="0"/>
+    <line x1="400" y1="225" x2="800" y2="0"/>
+    <line x1="400" y1="225" x2="800" y2="225"/>
+    <line x1="400" y1="225" x2="800" y2="450"/>
+    <line x1="400" y1="225" x2="600" y2="450"/>
+    <line x1="400" y1="225" x2="400" y2="450"/>
+    <line x1="400" y1="225" x2="200" y2="450"/>
+    <line x1="400" y1="225" x2="0" y2="450"/>
+    <line x1="400" y1="225" x2="0" y2="225"/>
+  </g>
+
+  <!-- Concentric Triangles -->
+  <polygon points="400,90 530,320 270,320" fill="none" stroke="#FF5F1F" stroke-width="3" filter="url(#pinkGlow)"/>
+  <polygon points="400,130 490,290 310,290" fill="none" stroke="#FF007F" stroke-width="2"/>
+  <polygon points="400,170 450,260 350,260" fill="none" stroke="#39FF14" stroke-width="2"/>
+  <circle cx="400" cy="225" r="14" fill="#00FFFF"/>
+
+  <text x="40" y="70" font-family="'Space Grotesk', 'Orbitron', monospace" font-size="32" font-weight="900" fill="#FFFFFF" letter-spacing="3">CEREBRO SINTÉTICO FEST</text>
+  <text x="40" y="105" font-family="'JetBrains Mono', monospace" font-size="14" fill="#FF007F" font-weight="700" letter-spacing="2">// 48H OUTDOOR PSY-CAMPING EXPERIENCE</text>
+  <text x="40" y="130" font-family="'JetBrains Mono', monospace" font-size="12" fill="#B0B0B0">DATE: 12-14.DEC.2026 // LAGO ATITLÁN // 3 ESCENARIOS</text>
+
+  <rect x="670" y="40" width="90" height="24" fill="#FF5F1F"/>
+  <text x="678" y="57" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="900" fill="#000000">TIER 1 OPEN</text>
+  <text x="40" y="420" font-family="'JetBrains Mono', monospace" font-size="11" fill="#666666">CAMPING BASE + VISUAL ART + STRING ART INSTALLATIONS</text>
+</svg>

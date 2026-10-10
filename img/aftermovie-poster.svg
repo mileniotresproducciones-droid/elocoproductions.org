@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 514" width="1200" height="514">
+  <defs>
+    <linearGradient id="aftermovieBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050505"/>
+      <stop offset="35%" stop-color="#0E0814"/>
+      <stop offset="70%" stop-color="#190B26"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="laserCenter" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="rgba(57, 255, 20, 0.35)"/>
+      <stop offset="40%" stop-color="rgba(138, 43, 226, 0.2)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#aftermovieBg)"/>
+  <rect width="100%" height="100%" fill="url(#laserCenter)"/>
+
+  <!-- Laser Beams Fan -->
+  <g stroke-width="2" opacity="0.75">
+    <line x1="600" y1="460" x2="50" y2="40" stroke="#39FF14"/>
+    <line x1="600" y1="460" x2="180" y2="20" stroke="#00FFFF"/>
+    <line x1="600" y1="460" x2="340" y2="10" stroke="#39FF14"/>
+    <line x1="600" y1="460" x2="500" y2="0" stroke="#FF007F"/>
+    <line x1="600" y1="460" x2="600" y2="0" stroke="#39FF14"/>
+    <line x1="600" y1="460" x2="700" y2="0" stroke="#FF007F"/>
+    <line x1="600" y1="460" x2="860" y2="10" stroke="#39FF14"/>
+    <line x1="600" y1="460" x2="1020" y2="20" stroke="#00FFFF"/>
+    <line x1="600" y1="460" x2="1150" y2="40" stroke="#39FF14"/>
+  </g>
+
+  <!-- Sound Stage Outline -->
+  <polygon points="450,480 750,480 700,380 500,380" fill="#14141E" stroke="#39FF14" stroke-width="2"/>
+  <rect x="570" y="360" width="60" height="20" fill="#00FFFF"/>
+
+  <!-- Letterbox Framing Marks -->
+  <rect x="0" y="0" width="1200" height="40" fill="#000000" opacity="0.9"/>
+  <rect x="0" y="474" width="1200" height="40" fill="#000000" opacity="0.9"/>
+
+  <text x="50" y="28" font-family="'JetBrains Mono', monospace" font-size="12" fill="#39FF14">REC // 4K 60FPS 21:9 CINEMATIC RAW</text>
+  <text x="1000" y="28" font-family="'JetBrains Mono', monospace" font-size="12" fill="#B0B0B0">TIME: 00:04:48 // 142 BPM</text>
+
+  <text x="600" y="230" text-anchor="middle" font-family="'Space Grotesk', 'Orbitron', monospace" font-size="44" font-weight="900" fill="#FFFFFF" letter-spacing="6">AFTERMOVIE TEASER // OFFICIAL RECAP</text>
+  <text x="600" y="270" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="16" fill="#39FF14" letter-spacing="3">// PSICODELIA PURA &amp; DECIBELES INDUSTRIALES //</text>
+</svg>

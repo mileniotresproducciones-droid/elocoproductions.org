@@ -1,0 +1,55 @@
+{
+  "buildDate": "2026-10-09T00:49:20.106Z",
+  "portal": "eLoco Productions // Psych-Brutalism Rave & Tech Gear Portal",
+  "version": "1.0.0",
+  "manifest": {
+    "index.html": {
+      "size": "60.2",
+      "hash": "cf3e8c1b"
+    },
+    "loco-theme.css": {
+      "size": "40.1",
+      "hash": "3710ce53"
+    },
+    "design-tokens.css": {
+      "size": "6.8",
+      "hash": "364ed937"
+    },
+    "loco-engine.js": {
+      "size": "39.8",
+      "hash": "160ed84e"
+    },
+    "robots.txt": {
+      "size": "0.1",
+      "hash": "ba016de0"
+    },
+    ".htaccess": {
+      "size": "0.5",
+      "hash": "2b0931ba"
+    },
+    "img/aftermovie-poster.svg": {
+      "size": "2.4",
+      "hash": "abecb0d3"
+    },
+    "img/event-aftermath.svg": {
+      "size": "1.9",
+      "hash": "40c48f82"
+    },
+    "img/event-cerebro.svg": {
+      "size": "2.4",
+      "hash": "a2257b60"
+    },
+    "img/event-neon-circuit.svg": {
+      "size": "2.8",
+      "hash": "25f47637"
+    },
+    "img/LOGO.png": {
+      "size": "725.0",
+      "hash": "c73ab4c6"
+    },
+    "img/og-banner.svg": {
+      "size": "2.7",
+      "hash": "2c793976"
+    }
+  }
+}
